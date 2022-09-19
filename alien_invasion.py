@@ -132,6 +132,7 @@ class AlienInvasion:
             #Destroy existing bullets and create new fleet.
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increased_speed()
 
 
     def _create_fleet(self):
@@ -238,6 +239,9 @@ class AlienInvasion:
 
             #Hide the mouse cursor.
             pygame.mouse.set_visible(False)
+
+            #Reset the game settings.
+            self.settings.initialize_dynamic_settings()
 
         
 
