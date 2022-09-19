@@ -210,8 +210,9 @@ class AlienInvasion:
     def _ship_hit(self):
         """Responds to ship being hit by an alien"""
         if self.stats.ships_left > 0:
-            #Decrement ships left.
+            #Decrement ships left and update the scoreboard.
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
 
             #Get rid of any remaing aliens and bullets.
             self.aliens.empty()
@@ -259,6 +260,7 @@ class AlienInvasion:
             self.settings.initialize_dynamic_settings()
 
             self.sb.prep_level()
+            self.sb.prep_ships()
 
         
 
